@@ -7,7 +7,9 @@ import java.util.Set;
 
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
-import ems.member.configration.MemberConfig;
+import ems.member.configration.MemberConfig1;
+import ems.member.configration.MemberConfig2;
+import ems.member.configration.MemberConfig3;
 import ems.member.service.EMSInformationService;
 import ems.member.service.StudentAllSelectService;
 import ems.member.service.StudentModifyService;
@@ -34,9 +36,10 @@ public class MainClassUseConfiguration {
 		String[] sMajors = { "English Literature", "Korean Language and Literature", "French Language and Literature",
 				"Philosophy", "History", "Law", "Statistics", "Computer", "Economics", "Public Administration" };
 
-		// GenericXmlApplicationContext ctx = new GenericXmlApplicationContext("classpath:applicationContext.xml");
-		AnnotationConfigApplicationContext ctx = new AnnotationConfigApplicationContext(MemberConfig.class);
-		
+		// GenericXmlApplicationContext ctx = new
+		// GenericXmlApplicationContext("classpath:applicationContext.xml");
+		AnnotationConfigApplicationContext ctx = new AnnotationConfigApplicationContext(MemberConfig1.class);
+
 		EMSInformationService informationService = ctx.getBean("informationService", EMSInformationService.class);
 		informationService.outputEMSInformation();
 
